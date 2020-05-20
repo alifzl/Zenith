@@ -1,4 +1,3 @@
-# importing the Requirements
 import logging
 import random
 import socket
@@ -50,11 +49,10 @@ def down_it(item):
             time.sleep(.1)
     except socket.error as e:
         print("\033[91mno connection! server maybe down\033[0m")
-        # print("\033[91m",e,"\033[0m")
         time.sleep(.1)
 
 
-# Thraed Function
+# Thread Function
 def dos():
     while True:
         item = q.get()
@@ -112,8 +110,7 @@ headers.close()
 q = Queue()
 w = Queue()
 
-### the main methode ###
-
+# the main method
 if __name__ == '__main__':
     if len(sys.argv) < 2:
         usage()
