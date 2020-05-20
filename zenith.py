@@ -9,6 +9,19 @@ from optparse import OptionParser
 from queue import Queue
 
 uagent = []
+host = ""
+port = 0
+thr = 0
+item = 0
+
+# reading headers
+headers = open("headers.txt", "r")
+data = headers.read()
+headers.close()
+
+# task queue are q,w
+q = Queue()
+w = Queue()
 
 
 def user_agent():
@@ -100,15 +113,6 @@ def get_parameters():
     else:
         thr = opts.turbo
 
-
-# reading headers
-global data
-headers = open("headers.txt", "r")
-data = headers.read()
-headers.close()
-# task queue are q,w
-q = Queue()
-w = Queue()
 
 # the main method
 if __name__ == '__main__':
