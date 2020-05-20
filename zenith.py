@@ -140,7 +140,7 @@ if __name__ == '__main__':
         item = 0
         # if we Encounter the lack of memory,wait,then resume the threads
         while True:
-            if (item > 1800):  # for no memory crash
+            if item > 1800:  # for no memory crash
                 item = 0
                 time.sleep(.1)  # add a delay
             item = item + 1
