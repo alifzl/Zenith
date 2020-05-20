@@ -63,11 +63,11 @@ def dos():
 # Application dashboard & initialization
 def usage():
     print(''' \033[92m\tIt's the Network project DDos Script (zenith) 
-	It's for Educational purposes.Your ip is visible.
-	usage : python zenith.py [-s] [-p]
-	-h : help
-	-s : server ip
-	-p : port default 80 \033[0m''')
+        It's for Educational purposes.Your ip is visible.
+        usage : python zenith.py [-s] [-p]
+        -h : help
+        -s : server ip
+        -p : port default 80 \033[0m''')
     sys.exit()
 
 
