@@ -59,7 +59,7 @@ def down_it():
                 s.shutdown(1)
                 print("\033[91mShut<->down\033[0m")
             time.sleep(.1)
-    except socket.error as e:
+    except socket.error as _:
         print("\033[91mno connection! server maybe down\033[0m")
         time.sleep(.1)
 
